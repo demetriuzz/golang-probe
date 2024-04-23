@@ -11,9 +11,18 @@ var answer uint = 42
 // главная функция - точка входа
 func main() {
 	// вызов функций
+	fmt.Println(">>>", 1)
 	printText(42)
 	printDigit(0)
 	printDigit(7)
+	fmt.Println("Сумма чисел =", sum(2, 5, 6, 7, 3, 2, 45))
+
+	fmt.Println(">>>", 2)
+	// переменная как тип функции
+	f1 := printText
+	f1(123)
+	f1 = printDigit
+	f1(6)
 }
 
 func printText(answer uint) {
@@ -44,4 +53,11 @@ func printDigit(count uint) {
 			fmt.Println(i, "Больше чем 5")
 		}
 	}
+}
+
+func sum(digits ...int) (sum int) {
+	for _, digit := range digits {
+		sum += digit
+	}
+	return
 }
