@@ -4,6 +4,8 @@
 *.dll
 *.so
 *.dylib
+# my own variant for exec on linux
+*.bin
 
 # Test binary, built with `go test -c`
 *.test
